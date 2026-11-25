@@ -3,29 +3,27 @@
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
-  font-size: 12px;
-  color: #8a8a8a;
+  font-size: 16px;
+  color: #333333;
 }
 
 a {
-  color: #8ab4ff;
+  color: #0056a6;
 }
 
-a:focus,
-.btn:focus,
-*:focus {
-  outline: none;
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
 }
 
 /* Page grid: header row, main row, footer row */
 #container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 150px 1fr 15%;
-  width: 100vw;
-  min-width: 1000px;
-  height: 100vh;
-  overflow: hidden;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .top {
@@ -76,8 +74,8 @@ a:focus,
 
 .card h2,
 .card h3 {
-  color: #b388d6;
-  font-size: 14px;
+  color: #593477;
+  font-size: 20px;
 }
 
 .card h5 {
@@ -132,4 +130,36 @@ a:focus,
   font-size: 11px;
   color: #aaaaaa;
   background: #f4f4f4;
+}
+
+/* Mobile styling */
+@media (max-width: 600px) {
+  .top {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .menu a {
+    margin: 0 8px;
+  }
+
+  #flexcontainer {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .foot {
+    padding: 20px;
+  }
 }
